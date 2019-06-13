@@ -26,6 +26,7 @@ class BaseViewController: UIViewController {
                 content.body = NSString.localizedUserNotificationString(forKey: "Você se lembrou", arguments: nil)
                 content.sound = UNNotificationSound.default
                 
+                
                 let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
                 
                 let request = UNNotificationRequest(identifier: "5seconds", content: content, trigger: trigger)
