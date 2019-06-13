@@ -19,9 +19,9 @@ class BaseViewController: UIViewController {
     @IBAction func remindButton(_ sender: Any) {
         let notificationCenter = UNUserNotificationCenter.current()
         notificationCenter.getNotificationSettings { (settings) in
-            if settings.authorizationStatus == .authorized {
+            if settings.authorizationStatus == .authorized { //Pode ter 4 tipos de estados
                 
-                let content = UNMutableNotificationContent()
+                let content = UNMutableNotificationContent() //Informações das notificações
                 content.title = NSString.localizedUserNotificationString(forKey: "Lembre-se", arguments: nil)
                 content.body = NSString.localizedUserNotificationString(forKey: "Você se lembrou", arguments: nil)
                 content.sound = UNNotificationSound.default
