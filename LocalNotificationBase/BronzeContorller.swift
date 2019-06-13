@@ -65,7 +65,6 @@ class BronzeController: UITableViewController, UIPickerViewDelegate, UIPickerVie
             content.badge = 1
         }
         
-//        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: Double(pickerView(pickerViewTime, titleForRow: 0, forComponent: 0)), repeats: false)
         
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: TimeInterval((pickerViewTime.selectedRow(inComponent: 0))+1), repeats: false)
         
