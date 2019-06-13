@@ -22,11 +22,11 @@ class BaseViewController: UIViewController {
             if settings.authorizationStatus == .authorized {
                 
                 let content = UNMutableNotificationContent()
-                content.title = NSString.localizedUserNotificationString(forKey: "Lembre-se", arguments: nil)
-                content.body = NSString.localizedUserNotificationString(forKey: "Você se lembrou", arguments: nil)
+                content.title = NSString.localizedUserNotificationString(forKey: "Lembrar", arguments: nil)
+                content.body = NSString.localizedUserNotificationString(forKey: "O app te lembrou de se lembrar", arguments: nil)
                 content.sound = UNNotificationSound.default
                 
-                let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+                let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10, repeats: false)
                 
                 let request = UNNotificationRequest(identifier: "5seconds", content: content, trigger: trigger)
                 
