@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8C6E9D6A22B2C002001A50D6 /* BronzeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6E9D6922B2C002001A50D6 /* BronzeTableViewController.swift */; };
+		8C6E9D6C22B2E5CE001A50D6 /* SilverTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6E9D6B22B2E5CD001A50D6 /* SilverTableViewController.swift */; };
 		AA6671C922B1292D00824252 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6671C822B1292D00824252 /* AppDelegate.swift */; };
 		AA6671CB22B1292D00824252 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6671CA22B1292D00824252 /* BaseViewController.swift */; };
 		AA6671CE22B1292D00824252 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA6671CC22B1292D00824252 /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 
 /* Begin PBXFileReference section */
 		8C6E9D6922B2C002001A50D6 /* BronzeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BronzeTableViewController.swift; sourceTree = "<group>"; };
+		8C6E9D6B22B2E5CD001A50D6 /* SilverTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SilverTableViewController.swift; sourceTree = "<group>"; };
 		AA6671C522B1292D00824252 /* LocalNotificationBase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocalNotificationBase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA6671C822B1292D00824252 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA6671CA22B1292D00824252 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				AA6671D122B1293000824252 /* LaunchScreen.storyboard */,
 				AA6671D422B1293000824252 /* Info.plist */,
 				8C6E9D6922B2C002001A50D6 /* BronzeTableViewController.swift */,
+				8C6E9D6B22B2E5CD001A50D6 /* SilverTableViewController.swift */,
 			);
 			path = LocalNotificationBase;
 			sourceTree = "<group>";
@@ -140,6 +143,7 @@
 			files = (
 				AA6671CB22B1292D00824252 /* BaseViewController.swift in Sources */,
 				8C6E9D6A22B2C002001A50D6 /* BronzeTableViewController.swift in Sources */,
+				8C6E9D6C22B2E5CE001A50D6 /* SilverTableViewController.swift in Sources */,
 				AA6671C922B1292D00824252 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
