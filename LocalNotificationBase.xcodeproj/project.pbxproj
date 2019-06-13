@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		869E664C22B2C8A4000E5866 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869E664B22B2C8A4000E5866 /* EditViewController.swift */; };
+		869E665022B2C958000E5866 /* sendNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869E664F22B2C958000E5866 /* sendNotification.swift */; };
 		AA6671C922B1292D00824252 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6671C822B1292D00824252 /* AppDelegate.swift */; };
 		AA6671CB22B1292D00824252 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6671CA22B1292D00824252 /* BaseViewController.swift */; };
 		AA6671CE22B1292D00824252 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA6671CC22B1292D00824252 /* Main.storyboard */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		869E664B22B2C8A4000E5866 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
+		869E664F22B2C958000E5866 /* sendNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sendNotification.swift; sourceTree = "<group>"; };
 		AA6671C522B1292D00824252 /* LocalNotificationBase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocalNotificationBase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA6671C822B1292D00824252 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA6671CA22B1292D00824252 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -35,6 +39,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		869E664D22B2C8C3000E5866 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AA6671D122B1293000824252 /* LaunchScreen.storyboard */,
+				AA6671CC22B1292D00824252 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		869E664E22B2C8CF000E5866 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				869E664B22B2C8A4000E5866 /* EditViewController.swift */,
+				AA6671CA22B1292D00824252 /* BaseViewController.swift */,
+				869E664F22B2C958000E5866 /* sendNotification.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		AA6671BC22B1292D00824252 = {
 			isa = PBXGroup;
 			children = (
@@ -54,11 +77,10 @@
 		AA6671C722B1292D00824252 /* LocalNotificationBase */ = {
 			isa = PBXGroup;
 			children = (
+				869E664D22B2C8C3000E5866 /* View */,
+				869E664E22B2C8CF000E5866 /* Controller */,
 				AA6671C822B1292D00824252 /* AppDelegate.swift */,
-				AA6671CA22B1292D00824252 /* BaseViewController.swift */,
-				AA6671CC22B1292D00824252 /* Main.storyboard */,
 				AA6671CF22B1293000824252 /* Assets.xcassets */,
-				AA6671D122B1293000824252 /* LaunchScreen.storyboard */,
 				AA6671D422B1293000824252 /* Info.plist */,
 			);
 			path = LocalNotificationBase;
@@ -136,6 +158,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA6671CB22B1292D00824252 /* BaseViewController.swift in Sources */,
+				869E664C22B2C8A4000E5866 /* EditViewController.swift in Sources */,
+				869E665022B2C958000E5866 /* sendNotification.swift in Sources */,
 				AA6671C922B1292D00824252 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,7 +307,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = GT48V5L69E;
+				DEVELOPMENT_TEAM = CTAFH43K36;
 				INFOPLIST_FILE = LocalNotificationBase/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -301,7 +325,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = GT48V5L69E;
+				DEVELOPMENT_TEAM = CTAFH43K36;
 				INFOPLIST_FILE = LocalNotificationBase/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
