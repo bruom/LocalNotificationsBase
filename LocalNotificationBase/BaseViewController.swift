@@ -17,30 +17,8 @@ class BaseViewController: UIViewController {
     }
 
     @IBAction func remindButton(_ sender: Any) {
-        let notificationCenter = UNUserNotificationCenter.current()
-        notificationCenter.getNotificationSettings { (settings) in
-            if settings.authorizationStatus == .authorized {
-                
-                let content = UNMutableNotificationContent()
-                content.title = NSString.localizedUserNotificationString(forKey: "Lembre-se", arguments: nil)
-                content.body = NSString.localizedUserNotificationString(forKey: "Você se lembrou", arguments: nil)
-                content.sound = UNNotificationSound.default
-                
-                let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
-                
-                let request = UNNotificationRequest(identifier: "5seconds", content: content, trigger: trigger)
-                
-                let center = UNUserNotificationCenter.current()
-                center.add(request) { (error : Error?) in
-                    if let error = error {
-                        print(error.localizedDescription)
-                    }
-                }
-                
-            } else {
-                print("Impossível mandar notificação - permissão negada")
-            }
-        }
+        
+        enviarNotificacao(titulo: "Lembre-se 2", corpo: "Corpo", identificador: "1", intervalo: "5", badge: true, som: true)
     }
     
 }
