@@ -13,6 +13,7 @@
 		AA6671D022B1293000824252 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA6671CF22B1293000824252 /* Assets.xcassets */; };
 		AA6671D322B1293000824252 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA6671D122B1293000824252 /* LaunchScreen.storyboard */; };
 		E4A59A7F22B2C01700323085 /* BronzeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A59A7E22B2C01700323085 /* BronzeTableViewController.swift */; };
+		E4A59A8122B2E59C00323085 /* PrataTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A59A8022B2E59C00323085 /* PrataTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		AA6671D222B1293000824252 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AA6671D422B1293000824252 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E4A59A7E22B2C01700323085 /* BronzeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BronzeTableViewController.swift; sourceTree = "<group>"; };
+		E4A59A8022B2E59C00323085 /* PrataTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrataTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				AA6671C822B1292D00824252 /* AppDelegate.swift */,
 				AA6671CA22B1292D00824252 /* BaseViewController.swift */,
 				E4A59A7E22B2C01700323085 /* BronzeTableViewController.swift */,
+				E4A59A8022B2E59C00323085 /* PrataTableViewController.swift */,
 				AA6671CC22B1292D00824252 /* Main.storyboard */,
 				AA6671CF22B1293000824252 /* Assets.xcassets */,
 				AA6671D122B1293000824252 /* LaunchScreen.storyboard */,
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4A59A8122B2E59C00323085 /* PrataTableViewController.swift in Sources */,
 				AA6671CB22B1292D00824252 /* BaseViewController.swift in Sources */,
 				E4A59A7F22B2C01700323085 /* BronzeTableViewController.swift in Sources */,
 				AA6671C922B1292D00824252 /* AppDelegate.swift in Sources */,
