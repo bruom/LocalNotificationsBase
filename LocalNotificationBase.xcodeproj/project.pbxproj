@@ -12,6 +12,9 @@
 		AA6671CE22B1292D00824252 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA6671CC22B1292D00824252 /* Main.storyboard */; };
 		AA6671D022B1293000824252 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA6671CF22B1293000824252 /* Assets.xcassets */; };
 		AA6671D322B1293000824252 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA6671D122B1293000824252 /* LaunchScreen.storyboard */; };
+		CB27C7E322B2C79300D97C55 /* BronzeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB27C7E222B2C79300D97C55 /* BronzeVC.swift */; };
+		CB27C7E522B2C7A400D97C55 /* PrataVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB27C7E422B2C7A400D97C55 /* PrataVC.swift */; };
+		CB27C7E722B2C7B000D97C55 /* OuroVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB27C7E622B2C7B000D97C55 /* OuroVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		AA6671CF22B1293000824252 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA6671D222B1293000824252 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AA6671D422B1293000824252 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CB27C7E222B2C79300D97C55 /* BronzeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BronzeVC.swift; sourceTree = "<group>"; };
+		CB27C7E422B2C7A400D97C55 /* PrataVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrataVC.swift; sourceTree = "<group>"; };
+		CB27C7E622B2C7B000D97C55 /* OuroVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OuroVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +60,25 @@
 		AA6671C722B1292D00824252 /* LocalNotificationBase */ = {
 			isa = PBXGroup;
 			children = (
+				CB27C7E822B2C7BB00D97C55 /* VC */,
 				AA6671C822B1292D00824252 /* AppDelegate.swift */,
-				AA6671CA22B1292D00824252 /* BaseViewController.swift */,
 				AA6671CC22B1292D00824252 /* Main.storyboard */,
 				AA6671CF22B1293000824252 /* Assets.xcassets */,
 				AA6671D122B1293000824252 /* LaunchScreen.storyboard */,
 				AA6671D422B1293000824252 /* Info.plist */,
 			);
 			path = LocalNotificationBase;
+			sourceTree = "<group>";
+		};
+		CB27C7E822B2C7BB00D97C55 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				CB27C7E222B2C79300D97C55 /* BronzeVC.swift */,
+				CB27C7E622B2C7B000D97C55 /* OuroVC.swift */,
+				CB27C7E422B2C7A400D97C55 /* PrataVC.swift */,
+				AA6671CA22B1292D00824252 /* BaseViewController.swift */,
+			);
+			path = VC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,8 +152,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB27C7E322B2C79300D97C55 /* BronzeVC.swift in Sources */,
+				CB27C7E522B2C7A400D97C55 /* PrataVC.swift in Sources */,
 				AA6671CB22B1292D00824252 /* BaseViewController.swift in Sources */,
 				AA6671C922B1292D00824252 /* AppDelegate.swift in Sources */,
+				CB27C7E722B2C7B000D97C55 /* OuroVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,7 +303,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = GT48V5L69E;
+				DEVELOPMENT_TEAM = W76FRTKWHT;
 				INFOPLIST_FILE = LocalNotificationBase/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -301,7 +321,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = GT48V5L69E;
+				DEVELOPMENT_TEAM = W76FRTKWHT;
 				INFOPLIST_FILE = LocalNotificationBase/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
