@@ -32,6 +32,19 @@ func sendNotificationLocal(_ title:String, _ body:String, _ identifier: String, 
                 }
             }
             
+            
+            
+            //Actions
+            let snoozeAction = UNNotificationAction(identifier: "Snooze", title: "Snooze", options: [])
+            let deleteAction = UNNotificationAction(identifier: "DeleteAction", title: "Delete", options: [.destructive])
+            let category = UNNotificationCategory(identifier: identifier,
+                                                  actions: [snoozeAction, deleteAction],
+                                                  intentIdentifiers: [],
+                                                  options: [])
+            
+            center.setNotificationCategories([category])
+            
+            
         } else {
             print("Impossível mandar notificação - permissão negada")
         }

@@ -10,14 +10,15 @@ import UIKit
 import UserNotifications
 
 class BaseViewController: UIViewController {
-
+    var appDelegate = UIApplication.shared.delegate as? AppDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
 
     @IBAction func remindButton(_ sender: Any) {
-        sendNotificationLocal("Lembre-se", "ocê se lembrou", "5", 5, true, 1)
+//        sendNotificationLocal("Lembre-se", "ocê se lembrou", "5", 5, true, 1)
+        self.appDelegate?.scheduleNotification("title", "subtitle", "body", "identifier")
     }
     
 }

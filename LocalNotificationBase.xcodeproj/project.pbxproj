@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		869E664C22B2C8A4000E5866 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869E664B22B2C8A4000E5866 /* EditViewController.swift */; };
 		869E665022B2C958000E5866 /* sendNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869E664F22B2C958000E5866 /* sendNotification.swift */; };
+		869E665222B2F071000E5866 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 869E665122B2F071000E5866 /* logo.png */; };
+		869E665422B2F70E000E5866 /* HaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869E665322B2F70E000E5866 /* HaViewController.swift */; };
 		AA6671C922B1292D00824252 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6671C822B1292D00824252 /* AppDelegate.swift */; };
 		AA6671CB22B1292D00824252 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6671CA22B1292D00824252 /* BaseViewController.swift */; };
 		AA6671CE22B1292D00824252 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA6671CC22B1292D00824252 /* Main.storyboard */; };
@@ -19,6 +21,8 @@
 /* Begin PBXFileReference section */
 		869E664B22B2C8A4000E5866 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 		869E664F22B2C958000E5866 /* sendNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sendNotification.swift; sourceTree = "<group>"; };
+		869E665122B2F071000E5866 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		869E665322B2F70E000E5866 /* HaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaViewController.swift; sourceTree = "<group>"; };
 		AA6671C522B1292D00824252 /* LocalNotificationBase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocalNotificationBase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA6671C822B1292D00824252 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA6671CA22B1292D00824252 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +58,7 @@
 				869E664B22B2C8A4000E5866 /* EditViewController.swift */,
 				AA6671CA22B1292D00824252 /* BaseViewController.swift */,
 				869E664F22B2C958000E5866 /* sendNotification.swift */,
+				869E665322B2F70E000E5866 /* HaViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -80,6 +85,7 @@
 				869E664D22B2C8C3000E5866 /* View */,
 				869E664E22B2C8CF000E5866 /* Controller */,
 				AA6671C822B1292D00824252 /* AppDelegate.swift */,
+				869E665122B2F071000E5866 /* logo.png */,
 				AA6671CF22B1293000824252 /* Assets.xcassets */,
 				AA6671D422B1293000824252 /* Info.plist */,
 			);
@@ -144,6 +150,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				869E665222B2F071000E5866 /* logo.png in Resources */,
 				AA6671D322B1293000824252 /* LaunchScreen.storyboard in Resources */,
 				AA6671D022B1293000824252 /* Assets.xcassets in Resources */,
 				AA6671CE22B1292D00824252 /* Main.storyboard in Resources */,
@@ -157,6 +164,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				869E665422B2F70E000E5866 /* HaViewController.swift in Sources */,
 				AA6671CB22B1292D00824252 /* BaseViewController.swift in Sources */,
 				869E664C22B2C8A4000E5866 /* EditViewController.swift in Sources */,
 				869E665022B2C958000E5866 /* sendNotification.swift in Sources */,

@@ -13,16 +13,18 @@ import UserNotifications
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    let notificationCenter = UNUserNotificationCenter.current()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        let options: UNAuthorizationOptions = [.alert,.sound,.badge]
-        let notificationCenter = UNUserNotificationCenter.current()
+        notificationCenter.delegate = self
+        
+        let options: UNAuthorizationOptions = [.alert, .sound, .badge]
+        
         notificationCenter.requestAuthorization(options: options) {
             (didAllow, error) in
             if !didAllow {
-                print("Notifications not allowed by user")
+                print("User has declined notifications")
             }
         }
         return true
@@ -54,3 +56,90 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+extension AppDelegate: UNUserNotificationCenterDelegate {
+    
+    
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                willPresent notification: UNNotification,
+                                withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        
+        completionHandler([.alert, .sound])
+    }
+    
+    
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                didReceive response: UNNotificationResponse,
+                                withCompletionHandler completionHandler: @escaping () -> Void) {
+        
+        //TAKE REPONSE OF THE ACTION
+        let identifier = response.actionIdentifier
+        
+        
+        //TAKE OPTION OF THE ACTION
+        if identifier == "repeat"{
+            scheduleNotification("title", "String", "String", "identifier")
+        }
+        else if identifier == "open" {
+
+            //Create a instance of the ViewController
+            let storyboard = UIStoryboard(name: "Main", bundle: nil);
+            let viewController: HaViewController = storyboard.instantiateViewController(withIdentifier: "HaViewController") as! HaViewController;
+            
+            // Then push that view controller onto the navigation stack
+            let rootViewController = self.window!.rootViewController as! UINavigationController;
+            rootViewController.pushViewController(viewController, animated: true);
+
+        }
+        
+        completionHandler()
+    }
+    
+    
+    
+    func scheduleNotification(_ title:String, _ subtitle:String, _ body:String, _ identifier:String) {
+        
+        let content = UNMutableNotificationContent()
+        
+        //CREATE BODY OF THE NOTIFICATION
+        content.title = title
+        content.subtitle = subtitle
+        content.body = body
+        content.sound = UNNotificationSound.default
+        content.badge = 1
+        content.categoryIdentifier = identifier
+        
+        
+        //SET IMAGE
+        let imageName = "logo"
+        guard let imageURL = Bundle.main.url(forResource: imageName, withExtension: "png") else { return }
+        let attachment = try! UNNotificationAttachment(identifier: imageName, url: imageURL, options: .none)
+        content.attachments = [attachment]
+        
+        
+        
+        
+        //REQUEST NOTIFICATION
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
+        let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
+        
+        notificationCenter.add(request) { (error) in
+            if let error = error {
+                print("Error \(error.localizedDescription)")
+            }
+        }
+        
+        
+        
+        //ACTIONS IN  THE NOTIFICATION
+        let snoozeAction = UNNotificationAction(identifier: "repeat", title: "Repeat", options: [])
+        let deleteAction = UNNotificationAction(identifier: "open", title: "Open", options: [.foreground])
+        let category = UNNotificationCategory(identifier: identifier,
+                                              actions: [snoozeAction, deleteAction],
+                                              intentIdentifiers: [],
+                                              options: [])
+        
+        notificationCenter.setNotificationCategories([category])
+    }
+}
