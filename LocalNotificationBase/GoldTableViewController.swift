@@ -1,16 +1,17 @@
 //
-//  SilverTableViewController.swift
+//  GoldTableViewController.swift
 //  LocalNotificationBase
 //
-//  Created by Zewu Chen on 13/06/19.
+//  Created by Zewu Chen on 14/06/19.
 //  Copyright © 2019 Bruno Omella Mainieri. All rights reserved.
 //
 
 import UIKit
 import UserNotifications
 
-class SilverTableViewController: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource, UNUserNotificationCenterDelegate {
-    
+class GoldTableViewController: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource, UNUserNotificationCenterDelegate {
+
+
     @IBOutlet weak var txtTitle: UITextField!
     @IBOutlet weak var txtDescription: UITextField!
     @IBOutlet weak var pickerView: UIPickerView!
@@ -51,16 +52,17 @@ class SilverTableViewController: UITableViewController, UIPickerViewDelegate, UI
         return pickerData[row]
     }
     
+    
     @IBAction func btnEnviar(_ sender: Any) {
         notification()
     }
     
     func notification(){
-        let repeatAction = UNNotificationAction(identifier: "REPEAT_ACTION", title: "Repetir", options: [])
-        let acceptAction = UNNotificationAction(identifier: "ACCEPT_ACTION", title: "Ok", options: [.foreground])
+        let repeatAction = UNNotificationAction(identifier: "REPEAT_ACTION", title: "Repetir", options: UNNotificationActionOptions(rawValue: 0))
+        let acceptAction = UNNotificationAction(identifier: "ACCEPT_ACTION", title: "Ok", options: UNNotificationActionOptions(rawValue: 0))
         
         let meetingInviteCategory =
-            UNNotificationCategory(identifier: "OPTIONS",
+            UNNotificationCategory(identifier: "CUSTOM",
                                    actions: [repeatAction, acceptAction],
                                    intentIdentifiers: [],
                                    hiddenPreviewsBodyPlaceholder: "",
@@ -90,9 +92,9 @@ class SilverTableViewController: UITableViewController, UIPickerViewDelegate, UI
         //Trigger
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: Double(pickerData[pickerView.selectedRow(inComponent: 0)]) as! TimeInterval, repeats: false)
         
-        content.categoryIdentifier = "OPTIONS"
+        content.categoryIdentifier = "CUSTOM"
         //Request
-        let request = UNNotificationRequest(identifier: "timeChoice", content: content, trigger: trigger)
+        let request = UNNotificationRequest(identifier: "timeChoiceCustom", content: content, trigger: trigger)
         
         let notificationCenter = UNUserNotificationCenter.current()
         notificationCenter.delegate = self
@@ -115,11 +117,13 @@ class SilverTableViewController: UITableViewController, UIPickerViewDelegate, UI
     }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        // Get the meeting ID from the original notification.
+        let userInfo = response.notification.request.content.userInfo
         
         // Perform the task associated with the action.
         switch response.actionIdentifier {
         case "ACCEPT_ACTION":
-            self.performSegue(withIdentifier: "showText", sender: nil)
+            print("Aceito")
             break
             
         case "REPEAT_ACTION":

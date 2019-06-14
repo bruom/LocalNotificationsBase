@@ -9,6 +9,13 @@
 /* Begin PBXBuildFile section */
 		8C6E9D6A22B2C002001A50D6 /* BronzeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6E9D6922B2C002001A50D6 /* BronzeTableViewController.swift */; };
 		8C6E9D6C22B2E5CE001A50D6 /* SilverTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6E9D6B22B2E5CD001A50D6 /* SilverTableViewController.swift */; };
+		8CC7D54622B3F3DB0049843D /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CC7D54522B3F3DB0049843D /* UserNotifications.framework */; };
+		8CC7D54822B3F3DB0049843D /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CC7D54722B3F3DB0049843D /* UserNotificationsUI.framework */; };
+		8CC7D54B22B3F3DB0049843D /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC7D54A22B3F3DB0049843D /* NotificationViewController.swift */; };
+		8CC7D54E22B3F3DB0049843D /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CC7D54C22B3F3DB0049843D /* MainInterface.storyboard */; };
+		8CC7D55222B3F3DB0049843D /* Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8CC7D54322B3F3DB0049843D /* Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		8CC7D55822B3F6A20049843D /* GoldTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC7D55722B3F6A20049843D /* GoldTableViewController.swift */; };
+		8CC7D55A22B402F50049843D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CC7D55922B402F50049843D /* Assets.xcassets */; };
 		AA6671C922B1292D00824252 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6671C822B1292D00824252 /* AppDelegate.swift */; };
 		AA6671CB22B1292D00824252 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6671CA22B1292D00824252 /* BaseViewController.swift */; };
 		AA6671CE22B1292D00824252 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA6671CC22B1292D00824252 /* Main.storyboard */; };
@@ -16,9 +23,41 @@
 		AA6671D322B1293000824252 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA6671D122B1293000824252 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		8CC7D55022B3F3DB0049843D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AA6671BD22B1292D00824252 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8CC7D54222B3F3DB0049843D;
+			remoteInfo = Extension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8CC7D55622B3F3DB0049843D /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				8CC7D55222B3F3DB0049843D /* Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		8C6E9D6922B2C002001A50D6 /* BronzeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BronzeTableViewController.swift; sourceTree = "<group>"; };
 		8C6E9D6B22B2E5CD001A50D6 /* SilverTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SilverTableViewController.swift; sourceTree = "<group>"; };
+		8CC7D54322B3F3DB0049843D /* Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Extension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CC7D54522B3F3DB0049843D /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		8CC7D54722B3F3DB0049843D /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
+		8CC7D54A22B3F3DB0049843D /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		8CC7D54D22B3F3DB0049843D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		8CC7D54F22B3F3DB0049843D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8CC7D55722B3F6A20049843D /* GoldTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoldTableViewController.swift; sourceTree = "<group>"; };
+		8CC7D55922B402F50049843D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA6671C522B1292D00824252 /* LocalNotificationBase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocalNotificationBase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA6671C822B1292D00824252 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA6671CA22B1292D00824252 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -29,6 +68,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		8CC7D54022B3F3DB0049843D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8CC7D54822B3F3DB0049843D /* UserNotificationsUI.framework in Frameworks */,
+				8CC7D54622B3F3DB0049843D /* UserNotifications.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AA6671C222B1292D00824252 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -39,10 +87,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8CC7D54422B3F3DB0049843D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8CC7D54522B3F3DB0049843D /* UserNotifications.framework */,
+				8CC7D54722B3F3DB0049843D /* UserNotificationsUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8CC7D54922B3F3DB0049843D /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				8CC7D55922B402F50049843D /* Assets.xcassets */,
+				8CC7D54A22B3F3DB0049843D /* NotificationViewController.swift */,
+				8CC7D54C22B3F3DB0049843D /* MainInterface.storyboard */,
+				8CC7D54F22B3F3DB0049843D /* Info.plist */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		AA6671BC22B1292D00824252 = {
 			isa = PBXGroup;
 			children = (
 				AA6671C722B1292D00824252 /* LocalNotificationBase */,
+				8CC7D54922B3F3DB0049843D /* Extension */,
+				8CC7D54422B3F3DB0049843D /* Frameworks */,
 				AA6671C622B1292D00824252 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -51,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				AA6671C522B1292D00824252 /* LocalNotificationBase.app */,
+				8CC7D54322B3F3DB0049843D /* Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -66,6 +137,7 @@
 				AA6671D422B1293000824252 /* Info.plist */,
 				8C6E9D6922B2C002001A50D6 /* BronzeTableViewController.swift */,
 				8C6E9D6B22B2E5CD001A50D6 /* SilverTableViewController.swift */,
+				8CC7D55722B3F6A20049843D /* GoldTableViewController.swift */,
 			);
 			path = LocalNotificationBase;
 			sourceTree = "<group>";
@@ -73,6 +145,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		8CC7D54222B3F3DB0049843D /* Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8CC7D55522B3F3DB0049843D /* Build configuration list for PBXNativeTarget "Extension" */;
+			buildPhases = (
+				8CC7D53F22B3F3DB0049843D /* Sources */,
+				8CC7D54022B3F3DB0049843D /* Frameworks */,
+				8CC7D54122B3F3DB0049843D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Extension;
+			productName = Extension;
+			productReference = 8CC7D54322B3F3DB0049843D /* Extension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		AA6671C422B1292D00824252 /* LocalNotificationBase */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = AA6671D722B1293000824252 /* Build configuration list for PBXNativeTarget "LocalNotificationBase" */;
@@ -80,10 +169,12 @@
 				AA6671C122B1292D00824252 /* Sources */,
 				AA6671C222B1292D00824252 /* Frameworks */,
 				AA6671C322B1292D00824252 /* Resources */,
+				8CC7D55622B3F3DB0049843D /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				8CC7D55122B3F3DB0049843D /* PBXTargetDependency */,
 			);
 			name = LocalNotificationBase;
 			productName = LocalNotificationBase;
@@ -100,6 +191,9 @@
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "Bruno Omella Mainieri";
 				TargetAttributes = {
+					8CC7D54222B3F3DB0049843D = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
 					AA6671C422B1292D00824252 = {
 						CreatedOnToolsVersion = 10.2.1;
 					};
@@ -119,11 +213,21 @@
 			projectRoot = "";
 			targets = (
 				AA6671C422B1292D00824252 /* LocalNotificationBase */,
+				8CC7D54222B3F3DB0049843D /* Extension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		8CC7D54122B3F3DB0049843D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8CC7D55A22B402F50049843D /* Assets.xcassets in Resources */,
+				8CC7D54E22B3F3DB0049843D /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AA6671C322B1292D00824252 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -137,6 +241,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		8CC7D53F22B3F3DB0049843D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8CC7D54B22B3F3DB0049843D /* NotificationViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AA6671C122B1292D00824252 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -145,12 +257,29 @@
 				8C6E9D6A22B2C002001A50D6 /* BronzeTableViewController.swift in Sources */,
 				8C6E9D6C22B2E5CE001A50D6 /* SilverTableViewController.swift in Sources */,
 				AA6671C922B1292D00824252 /* AppDelegate.swift in Sources */,
+				8CC7D55822B3F6A20049843D /* GoldTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		8CC7D55122B3F3DB0049843D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8CC7D54222B3F3DB0049843D /* Extension */;
+			targetProxy = 8CC7D55022B3F3DB0049843D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
+		8CC7D54C22B3F3DB0049843D /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8CC7D54D22B3F3DB0049843D /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
 		AA6671CC22B1292D00824252 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -170,6 +299,44 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		8CC7D55322B3F3DB0049843D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GT48V5L69E;
+				INFOPLIST_FILE = Extension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.mackmobile.LocalNotificationBase.Extension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8CC7D55422B3F3DB0049843D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GT48V5L69E;
+				INFOPLIST_FILE = Extension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.mackmobile.LocalNotificationBase.Extension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		AA6671D522B1293000824252 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -289,6 +456,7 @@
 		AA6671D822B1293000824252 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GT48V5L69E;
@@ -307,6 +475,7 @@
 		AA6671D922B1293000824252 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GT48V5L69E;
@@ -325,6 +494,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		8CC7D55522B3F3DB0049843D /* Build configuration list for PBXNativeTarget "Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8CC7D55322B3F3DB0049843D /* Debug */,
+				8CC7D55422B3F3DB0049843D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		AA6671C022B1292D00824252 /* Build configuration list for PBXProject "LocalNotificationBase" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
