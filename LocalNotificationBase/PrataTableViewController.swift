@@ -12,13 +12,9 @@ import UserNotifications
 class PrataTableViewController: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource, UNUserNotificationCenterDelegate {
     
     @IBOutlet weak var tituloTextField: UITextField!
-    
     @IBOutlet weak var descricaoTextField: UITextField!
-    
     @IBOutlet weak var tempoPickerView: UIPickerView!
-    
     @IBOutlet weak var somSwitch: UISwitch!
-    
     @IBOutlet weak var badgeSwitch: UISwitch!
     
     var valoresPicker:[Double] = []
@@ -34,10 +30,10 @@ class PrataTableViewController: UITableViewController, UIPickerViewDelegate, UIP
     }
     
     @IBAction func agendarButton(_ sender: Any) {
-        obtemDados()
+        chamaNotificacao()
     }
     
-    func obtemDados() {
+    func chamaNotificacao() {
         let titulo:String = leTextField(textField: self.tituloTextField)
         let descricao:String = leTextField(textField: self.descricaoTextField)
         var tempo:Double = 0
@@ -60,22 +56,22 @@ class PrataTableViewController: UITableViewController, UIPickerViewDelegate, UIP
             }
         }
         
-        enviaNotificacao(titulo: titulo, descricao: descricao, tempo: tempo, som: som, badge: badge)
+        configuraNotificacao(titulo: titulo, descricao: descricao, tempo: tempo, som: som, badge: badge)
     }
     
-    func enviaNotificacao(titulo: String, descricao: String, tempo: Double, som: Bool, badge: Bool) {
+    func configuraNotificacao (titulo: String, descricao: String, tempo: Double, som: Bool, badge: Bool) {
         let repetir = UNNotificationAction(identifier: "REPETIR",
                                            title: "Repetir",
                                            options: UNNotificationActionOptions(rawValue: 0))
         
         let concluir = UNNotificationAction(identifier: "CONCLUIR",
                                             title: "Ok",
-                                            options: UNNotificationActionOptions(rawValue: 0))
+                                            options: [.foreground])
         
-        let categoriaPrata = UNNotificationCategory(identifier: "PRATA_NOTIFICACOES",
-                                                    actions: [repetir, concluir],
-                                                    intentIdentifiers: [],
-                                                    options: .customDismissAction)
+        let categoriaOuro = UNNotificationCategory(identifier: "PRATA_NOTIFICACOES",
+                                                   actions: [repetir, concluir],
+                                                   intentIdentifiers: [],
+                                                   options: .customDismissAction)
         
         let content = UNMutableNotificationContent()
         content.title = titulo
@@ -94,13 +90,16 @@ class PrataTableViewController: UITableViewController, UIPickerViewDelegate, UIP
         
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: tempo, repeats: false)
         
-        let request = UNNotificationRequest(identifier: "bronze", content: content, trigger: trigger)
+        let request = UNNotificationRequest(identifier: "prata", content: content, trigger: trigger)
         
-        
+        enviaNotificacao(request: request, categoria: categoriaOuro)
+    }
+    
+    func enviaNotificacao(request: UNNotificationRequest, categoria: UNNotificationCategory) {
         let notificationCenter = UNUserNotificationCenter.current()
         notificationCenter.delegate = self
         
-        notificationCenter.setNotificationCategories([categoriaPrata])
+        notificationCenter.setNotificationCategories([categoria])
         
         notificationCenter.getNotificationSettings { (settings) in
             if settings.authorizationStatus == .authorized {
@@ -126,11 +125,11 @@ class PrataTableViewController: UITableViewController, UIPickerViewDelegate, UIP
         
         switch response.actionIdentifier {
         case "REPETIR":
-            obtemDados()
+            chamaNotificacao()
             break
             
         case "CONCLUIR":
-            UIApplication.shared.applicationIconBadgeNumber = 0
+            self.performSegue(withIdentifier: "conclusao", sender: nil)
             break
             
         default:

@@ -1,19 +1,18 @@
 //
-//  BronzeTableViewController.swift
+//  OuroTableViewController.swift
 //  LocalNotificationBase
 //
-//  Created by Lia Kassardjian on 13/06/19.
+//  Created by Lia Kassardjian on 14/06/19.
 //  Copyright © 2019 Bruno Omella Mainieri. All rights reserved.
 //
 
 import UIKit
 import UserNotifications
 
-class BronzeTableViewController: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource {
-    
+class OuroTableViewController: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource, UNUserNotificationCenterDelegate{
+
     @IBOutlet weak var tituloTextField: UITextField!
     @IBOutlet weak var descricaoTextField: UITextField!
-    @IBOutlet weak var pickerTableViewCell: UITableViewCell!
     @IBOutlet weak var tempoPickerView: UIPickerView!
     @IBOutlet weak var somSwitch: UISwitch!
     @IBOutlet weak var badgeSwitch: UISwitch!
@@ -29,9 +28,12 @@ class BronzeTableViewController: UITableViewController, UIPickerViewDelegate, UI
         self.tempoPickerView.dataSource = self
         gerarNumeros()
     }
-
+    
     @IBAction func agendarButton(_ sender: Any) {
-        
+        chamaNotificacao()
+    }
+    
+    func chamaNotificacao() {
         let titulo:String = leTextField(textField: self.tituloTextField)
         let descricao:String = leTextField(textField: self.descricaoTextField)
         var tempo:Double = 0
@@ -54,13 +56,27 @@ class BronzeTableViewController: UITableViewController, UIPickerViewDelegate, UI
             }
         }
         
-        enviaNotificacao(titulo: titulo, descricao: descricao, tempo: tempo, som: som, badge: badge)
+        configuraNotificacao(titulo: titulo, descricao: descricao, tempo: tempo, som: som, badge: badge)
     }
     
-    func enviaNotificacao(titulo: String, descricao: String, tempo: Double, som: Bool, badge: Bool) {
+    func configuraNotificacao (titulo: String, descricao: String, tempo: Double, som: Bool, badge: Bool) {
+        let repetir = UNNotificationAction(identifier: "REPETIR",
+                                           title: "Repetir",
+                                           options: UNNotificationActionOptions(rawValue: 0))
+        
+        let concluir = UNNotificationAction(identifier: "CONCLUIR",
+                                            title: "Ok",
+                                            options: [.foreground])
+        
+        let categoriaOuro = UNNotificationCategory(identifier: "OURO_NOTIFICACOES",
+                                                    actions: [repetir, concluir],
+                                                    intentIdentifiers: [],
+                                                    options: .customDismissAction)
+        
         let content = UNMutableNotificationContent()
         content.title = titulo
         content.body = descricao
+        content.categoryIdentifier = "OURO_NOTIFICACOES"
         
         if som {
             content.sound = UNNotificationSound.default
@@ -74,10 +90,17 @@ class BronzeTableViewController: UITableViewController, UIPickerViewDelegate, UI
         
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: tempo, repeats: false)
         
-        let request = UNNotificationRequest(identifier: "bronze", content: content, trigger: trigger)
+        let request = UNNotificationRequest(identifier: "ouro", content: content, trigger: trigger)
         
-        
+        enviaNotificacao(request: request, categoria: categoriaOuro)
+    }
+    
+    func enviaNotificacao(request: UNNotificationRequest, categoria: UNNotificationCategory) {
         let notificationCenter = UNUserNotificationCenter.current()
+        notificationCenter.delegate = self
+        
+        notificationCenter.setNotificationCategories([categoria])
+        
         notificationCenter.getNotificationSettings { (settings) in
             if settings.authorizationStatus == .authorized {
                 
@@ -91,6 +114,26 @@ class BronzeTableViewController: UITableViewController, UIPickerViewDelegate, UI
             } else {
                 print("Impossível mandar notificação - permissão negada")
             }
+        }
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        let content = response.notification.request.content
+        if content.categoryIdentifier ==
+            "PRATA_NOTIFICACOES" {
+        }
+        
+        switch response.actionIdentifier {
+        case "REPETIR":
+            chamaNotificacao()
+            break
+            
+        case "CONCLUIR":
+            self.performSegue(withIdentifier: "conclusao", sender: nil)
+            break
+            
+        default:
+            break
         }
     }
     
@@ -123,5 +166,5 @@ class BronzeTableViewController: UITableViewController, UIPickerViewDelegate, UI
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return String(format: "%.0f", valoresPicker[row])
     }
-
+    
 }
