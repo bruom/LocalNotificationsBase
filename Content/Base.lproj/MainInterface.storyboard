@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="M4Y-Lb-cyx">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Notification View Controller-->
+        <scene sceneID="cwh-vc-ff4">
+            <objects>
+                <viewController id="M4Y-Lb-cyx" userLabel="Notification View Controller" customClass="NotificationViewController" customModule="Content" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" simulatedAppContext="notificationCenter" id="S3S-Oj-5AN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="220"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="medalhaOuro" translatesAutoresizingMaskIntoConstraints="NO" id="nnQ-kR-wSB">
+                                <rect key="frame" x="8" y="54" width="112" height="113"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="112" id="aaI-f1-LlH"/>
+                                    <constraint firstAttribute="height" constant="113" id="kuI-1Q-TXw"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Essa é uma notificação de nível ouro" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WSU-DV-OfM">
+                                <rect key="frame" x="128" y="59" width="176" height="103"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="WSU-DV-OfM" firstAttribute="leading" secondItem="nnQ-kR-wSB" secondAttribute="trailing" constant="8" id="7Cv-db-jDJ"/>
+                            <constraint firstItem="nnQ-kR-wSB" firstAttribute="top" secondItem="2BE-c3-nQJ" secondAttribute="top" constant="10" id="FZj-H1-pVp"/>
+                            <constraint firstItem="nnQ-kR-wSB" firstAttribute="leading" secondItem="2BE-c3-nQJ" secondAttribute="leading" constant="8" id="LRO-iv-COG"/>
+                            <constraint firstItem="2BE-c3-nQJ" firstAttribute="bottom" secondItem="WSU-DV-OfM" secondAttribute="bottom" constant="24" id="Qe4-Rm-Ezq"/>
+                            <constraint firstItem="2BE-c3-nQJ" firstAttribute="bottom" secondItem="nnQ-kR-wSB" secondAttribute="bottom" constant="19" id="SOJ-WE-OT7"/>
+                            <constraint firstItem="WSU-DV-OfM" firstAttribute="top" secondItem="2BE-c3-nQJ" secondAttribute="top" constant="15" id="hhN-rI-xOL"/>
+                            <constraint firstItem="2BE-c3-nQJ" firstAttribute="trailing" secondItem="WSU-DV-OfM" secondAttribute="trailing" constant="16" id="sb4-cp-mMY"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="2BE-c3-nQJ"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="220"/>
+                    <connections>
+                        <outlet property="imagem" destination="nnQ-kR-wSB" id="ehU-hP-Frh"/>
+                        <outlet property="label" destination="WSU-DV-OfM" id="bL6-Lb-1vk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="334.78260869565219" y="103.79464285714285"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="medalhaOuro" width="2838" height="2838"/>
+    </resources>
+</document>
