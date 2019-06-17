@@ -20,6 +20,7 @@
 		E4A59ABE22B4819200323085 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A59ABD22B4819200323085 /* NotificationViewController.swift */; };
 		E4A59AC122B4819200323085 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4A59ABF22B4819200323085 /* MainInterface.storyboard */; };
 		E4A59AC522B4819200323085 /* Content.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E4A59AB622B4819200323085 /* Content.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		E4BE11B822B7F72C00DC0AD3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA6671CF22B1293000824252 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -242,6 +243,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4BE11B822B7F72C00DC0AD3 /* Assets.xcassets in Resources */,
 				E4A59AC122B4819200323085 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
